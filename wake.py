@@ -24,6 +24,7 @@ while True:
 
             if wake_word in wake_words:
                 print(f"Wake word {wake_word} detected!")
+                print("Please give me some command :)")
                 recognizer.pause_threshold = 0.5 #seconds 
                 audio = recognizer.listen(source)
 
