@@ -11,16 +11,17 @@ wake_words = [
 
 recognizer = sr.Recognizer()
 
-with sr.Microphone() as source:
-    recognizer.pause_threshold = 0.75 #seconds.
-    audio = recognizer.listen(source)
+while True:
+    with sr.Microphone() as source:
+        recognizer.pause_threshold = 0.75 #seconds.
+        audio = recognizer.listen(source)
 
-    try:
-        print("Waking up...")
-        wake_word = recognizer.recognize_google(audio)
+        try:
+            print("Waking up...")
+            wake_word = recognizer.recognize_google(audio)
 
-        if wake_word in wake_words:
-            print(f"Wake word {wake_word} detected!")
+            if wake_word in wake_words:
+                print(f"Wake word {wake_word} detected!")
 
-    except Exception as e:
-        print("No wake words detected!")
+        except Exception as e:
+            print("No wake words detected!")
