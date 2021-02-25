@@ -20,9 +20,11 @@ while True:
         try:
             print("Waking up...")
             wake_word = recognizer.recognize_google(audio)
+            wake_word = wake_word.lower()
 
             if wake_word in wake_words:
                 print(f"Wake word {wake_word} detected!")
 
         except Exception as e:
             print("No wake words detected!")
+            continue
