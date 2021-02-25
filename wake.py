@@ -13,6 +13,7 @@ recognizer = sr.Recognizer()
 
 while True:
     with sr.Microphone() as source:
+        print("Waiting for a wake word...")
         recognizer.pause_threshold = 0.75 #seconds.
         audio = recognizer.listen(source)
 
