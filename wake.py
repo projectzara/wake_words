@@ -6,7 +6,8 @@ wake_words = [
     "jarvis, are you there?", 
     "are you there, jarvis?",
     "jarvis wake up",
-    "ok jarvis"
+    "ok jarvis",
+    "hello world"
 ]
 
 recognizer = sr.Recognizer()
