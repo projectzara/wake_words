@@ -24,6 +24,19 @@ while True:
 
             if wake_word in wake_words:
                 print(f"Wake word {wake_word} detected!")
+                recognizer.pause_threshold = 0.5 #seconds 
+                audio = recognizer.listen(source)
+
+                try:
+                    command = recognizer.recognize_google(audio)
+                    command = command.lower()
+
+                    print(f"You said: {command}")
+
+                    if command == "goodbye":
+                        exit()
+                except Exception as e:
+                    print("You woke me up, but didn't ask me anything -__-")
 
         except Exception as e:
             print("No wake words detected!")
